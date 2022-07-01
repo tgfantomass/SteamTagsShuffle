@@ -14,10 +14,6 @@
 				<div id="oute">- - -</div><hr>
 				<button id="gen">Shuffle Tags</button><hr>
 				<button id="one">One</button>&nbsp;&nbsp;<button id="aone">Add One</button>&nbsp;&nbsp;<button id="rngMode">RNG x1</button>
-				<!--<hr>
-				Qwe
-				<img src="https://store.akamai.steamstatic.com/public/images/v6/maincol_gradient_rule.png">
-				qwe-->
 			</div>
 		</center>
 	</body>
@@ -65,7 +61,6 @@ function aone()    {
 function one()     { tags = [] ; aone() }
 function gen()     { tags = [] ; for (let i=0, l=rng(3, 9); i<l; i++) aone() }
 function outTags() { for (let i=0, l=tags.length; i<l; i++) out((i>0?'<span class="ic">, </span>':'') + '<span class="tags" title="' + db.probs[ tags[i] ] + '">' + tags[i] + '</span>') ; out() }
-//function outTags() { for (let i=0, l=tags.length; i<l; i++) out((i>0?'<span class="ic">, </span>':'') + '<span class="tags">' + tags[i] + ' <small><small><small>(' + db.probs[ tags[i] ] + ')</small></small></small></span>') ; out() }
 function rngMode() { rngm = (rngm+1) % rngModes.length ; $('#rngMode')[0].innerHTML = rngModes[rngm] }
 on('#one',     () => { one()  ; outTags() })
 on('#aone',    () => { aone() ; outTags() })
